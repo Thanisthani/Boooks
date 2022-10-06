@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer componets{
+    .headerlink{
+        @apply text-[#e5e5e5] cursor-pointer text-[16px] font-light transition duration-[.4s] hover:text-[#b3b3b3];
+    }
+}

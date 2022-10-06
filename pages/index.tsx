@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import Banner from '../components/Welcome/banner'
+import Header from '../components/Welcome/header'
+import NewBooks from '../components/Welcome/newBooks'
 
 
 const Home = () => {
@@ -9,9 +12,13 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        Welcome
+      
+      <Header />
+      <div className='relative '>
+        <Banner />
+        <NewBooks />
       </div>
+      
 
     
     </div>
