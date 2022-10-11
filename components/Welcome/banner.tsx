@@ -31,8 +31,8 @@ const Banner = () => {
         <div className=" flex bg-[#592E64] h-[93vh]  items-center  pl-10">
             <div className="space-y-3 pl-10 flex-2" >
                 <div className="flex space-x-3  items-baseline  ">
-                <p className="text-white text-3xl">Welcome to</p>
-                <p className="text-white text-5xl font-semibold">BOOOKS</p>
+                <p className="text-white text-3xl font-[400]">Welcome to</p>
+                <p className="text-white text-3xl font-semibold">BOOOKS</p>
                 </div>
                 <p className="font-light text-2xl text-white">Online BookStore</p>
                 <p className="font-light text-sm max-w-sm text-justify text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam at suscipit laborum numquam totam corrupti tempora, exercitationem ducimus ab molestiae repudiandae aut nobis expedita, molestias accusamus rerum et. Cupiditate, quasi?</p>
