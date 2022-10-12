@@ -1,7 +1,13 @@
+import axios from 'axios';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import * as yup from 'yup';
 
 const LoginForm = () => {
+
+  const router = useRouter();
+  const [errMsg, setErrMsg] = useState(null);
 
     const formik = useFormik({
         initialValues: {
@@ -9,7 +15,7 @@ const LoginForm = () => {
           password:''
         },
         onSubmit: (values) => {
-            console.log(values);
+          handleSubmit(values);
         },
         validationSchema: yup.object({
           email: yup
@@ -20,11 +26,27 @@ const LoginForm = () => {
         }),
     });
     
+// post data to db
+  
+  const handleSubmit = async (values: any) => {
 
+    axios.post('http://localhost:8000/auth/login', values)
+      .then((response: any) => {
+        console.log(response.data.user);
+        if (response.data.user) {
+          router.push('/home');
+        }
+        else {
+          setErrMsg(response.data.message);
+          console.log(response.data.message);
+       }
+      });
+  }
+    
     return ( 
         <div className='pt-10'>
             <form className="w-50" onSubmit={formik.handleSubmit}>
-
+          {errMsg && (<div className="text-red-700 bg-red-100 w-[350px] text-center font-semibold py-1">{ errMsg}</div>)}
         <div className="mb-3 flex flex-col">
           <label htmlFor="email" className="text-lg text-[#50555c] font-semibold pb-3">
             Email

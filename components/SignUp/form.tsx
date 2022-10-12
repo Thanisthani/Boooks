@@ -1,7 +1,10 @@
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const SignupForm = () => {
+  const router = useRouter();
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -9,7 +12,7 @@ const SignupForm = () => {
           password:''
         },
         onSubmit: (values) => {
-            console.log(values);
+          handleSubmit(values);
         },
         validationSchema: yup.object({
             name: yup .string().trim().required('Name is required'),
@@ -21,6 +24,22 @@ const SignupForm = () => {
         }),
     });
     
+// post data to db
+  
+const handleSubmit = async (values: any) => {
+
+  axios.post('http://localhost:8000/user', values)
+    .then((response: any) => {
+      console.log(response.data);
+      if (response.data) {
+        router.push('/login');
+      }
+      else {
+        console.log("error");
+     }
+    });
+  }
+  
 
     return (
         <div className='pt-5'>

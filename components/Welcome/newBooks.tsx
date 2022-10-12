@@ -2,7 +2,7 @@ import { AiFillStar } from 'react-icons/ai';
 
 const NewBooks = () => {
     return (
-        <div className="pt-10 pb-10 px-32">
+        <div className="pt-10 pb-10 px-32 bg-white w-full h-full">
             <div className="text-center">
                 <p className="text-[#592E64] text-xl font-semibold">New Books</p>
                 {/* <p className="text-sm text-[#82628b] pt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aspernatur perspiciatis quae numquam? Necessitatibus sequi voluptatum consequuntur maiores saepe. Natus officiis quasi earum asperiores quis architecto fugiat minus sapiente obcaecati.</p> */}

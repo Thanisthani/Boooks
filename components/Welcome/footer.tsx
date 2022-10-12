@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from '/public/asset/Boooks_logo.png';
+import logo from '/public/asset/header_logo.png';
 import { BsFacebook,BsTelegram } from 'react-icons/Bs';
 import { AiFillTwitterCircle,AiOutlineCopyrightCircle, AiFillInstagram, AiOutlineMail,AiFillPhone } from 'react-icons/ai';
 import { ImLocation } from 'react-icons/im'
@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="bg-[#353b43]">
             <div className="grid grid-cols-4 pt-10 pb-5">
                 <div className="flex flex-col justify-center items-center">
-                    <Image src={logo} alt="logo" height={35} className="object-contain " />  
+                    <Image src={logo} alt="logo" height={65} className="object-contain " />  
                     <div className="flex items-center space-x-2 pt-2">
                         <BsFacebook className="text-[#d3d4d6] h-4 w-4 " />
                         <AiFillTwitterCircle className="text-[#d3d4d6] h-5 w-5 " />
